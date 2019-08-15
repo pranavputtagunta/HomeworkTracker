@@ -7,8 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		333B9F3123060E0C004AD7A7 /* EditHomeworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333B9F3023060E0C004AD7A7 /* EditHomeworkViewController.swift */; };
+		33E10F6923060F2900373B2B /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E10F6823060F2900373B2B /* AddEventViewController.swift */; };
+		33E10F6A23060F2900373B2B /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E10F6823060F2900373B2B /* AddEventViewController.swift */; };
+		33E10F6B23060F2900373B2B /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E10F6823060F2900373B2B /* AddEventViewController.swift */; };
+		33E10F6D23060FA800373B2B /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E10F6C23060FA800373B2B /* ScheduleTableViewController.swift */; };
+		33E10F6E23060FA800373B2B /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E10F6C23060FA800373B2B /* ScheduleTableViewController.swift */; };
+		33E10F6F23060FA800373B2B /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E10F6C23060FA800373B2B /* ScheduleTableViewController.swift */; };
+		33E10F7123060FDB00373B2B /* HomeworksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E10F7023060FDB00373B2B /* HomeworksTableViewController.swift */; };
+		33E10F7223060FDB00373B2B /* HomeworksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E10F7023060FDB00373B2B /* HomeworksTableViewController.swift */; };
+		33E10F7323060FDB00373B2B /* HomeworksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E10F7023060FDB00373B2B /* HomeworksTableViewController.swift */; };
+		33E10F752306101700373B2B /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E10F742306101700373B2B /* EventsTableViewController.swift */; };
+		33E10F762306101700373B2B /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E10F742306101700373B2B /* EventsTableViewController.swift */; };
+		33E10F772306101700373B2B /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E10F742306101700373B2B /* EventsTableViewController.swift */; };
+		33E10F792306108900373B2B /* CompletedHomeworksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E10F782306108900373B2B /* CompletedHomeworksTableViewController.swift */; };
+		33E10F7A2306108900373B2B /* CompletedHomeworksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E10F782306108900373B2B /* CompletedHomeworksTableViewController.swift */; };
+		33E10F7B2306108900373B2B /* CompletedHomeworksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E10F782306108900373B2B /* CompletedHomeworksTableViewController.swift */; };
+		33E10F7D230617EF00373B2B /* TimesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E10F7C230617EF00373B2B /* TimesViewController.swift */; };
+		33E10F7E230617EF00373B2B /* TimesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E10F7C230617EF00373B2B /* TimesViewController.swift */; };
+		33E10F7F230617EF00373B2B /* TimesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E10F7C230617EF00373B2B /* TimesViewController.swift */; };
 		33FF151E2304FF5B002BE310 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FF151D2304FF5B002BE310 /* AppDelegate.swift */; };
-		33FF15202304FF5B002BE310 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FF151F2304FF5B002BE310 /* ViewController.swift */; };
+		33FF15202304FF5B002BE310 /* AddHomeworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FF151F2304FF5B002BE310 /* AddHomeworkViewController.swift */; };
 		33FF15232304FF5B002BE310 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33FF15212304FF5B002BE310 /* Main.storyboard */; };
 		33FF15262304FF5B002BE310 /* HomeworkTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 33FF15242304FF5B002BE310 /* HomeworkTracker.xcdatamodeld */; };
 		33FF15282304FF5D002BE310 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33FF15272304FF5D002BE310 /* Assets.xcassets */; };
@@ -35,9 +54,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		333B9F3023060E0C004AD7A7 /* EditHomeworkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditHomeworkViewController.swift; sourceTree = "<group>"; };
+		33E10F6823060F2900373B2B /* AddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
+		33E10F6C23060FA800373B2B /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
+		33E10F7023060FDB00373B2B /* HomeworksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworksTableViewController.swift; sourceTree = "<group>"; };
+		33E10F742306101700373B2B /* EventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
+		33E10F782306108900373B2B /* CompletedHomeworksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedHomeworksTableViewController.swift; sourceTree = "<group>"; };
+		33E10F7C230617EF00373B2B /* TimesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimesViewController.swift; sourceTree = "<group>"; };
 		33FF151A2304FF5B002BE310 /* HomeworkTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeworkTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33FF151D2304FF5B002BE310 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		33FF151F2304FF5B002BE310 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		33FF151F2304FF5B002BE310 /* AddHomeworkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHomeworkViewController.swift; sourceTree = "<group>"; };
 		33FF15222304FF5B002BE310 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		33FF15252304FF5B002BE310 /* HomeworkTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HomeworkTracker.xcdatamodel; sourceTree = "<group>"; };
 		33FF15272304FF5D002BE310 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -100,7 +126,14 @@
 			isa = PBXGroup;
 			children = (
 				33FF151D2304FF5B002BE310 /* AppDelegate.swift */,
-				33FF151F2304FF5B002BE310 /* ViewController.swift */,
+				33FF151F2304FF5B002BE310 /* AddHomeworkViewController.swift */,
+				333B9F3023060E0C004AD7A7 /* EditHomeworkViewController.swift */,
+				33E10F6823060F2900373B2B /* AddEventViewController.swift */,
+				33E10F7C230617EF00373B2B /* TimesViewController.swift */,
+				33E10F6C23060FA800373B2B /* ScheduleTableViewController.swift */,
+				33E10F7023060FDB00373B2B /* HomeworksTableViewController.swift */,
+				33E10F742306101700373B2B /* EventsTableViewController.swift */,
+				33E10F782306108900373B2B /* CompletedHomeworksTableViewController.swift */,
 				33FF15212304FF5B002BE310 /* Main.storyboard */,
 				33FF15272304FF5D002BE310 /* Assets.xcassets */,
 				33FF15292304FF5D002BE310 /* LaunchScreen.storyboard */,
@@ -259,8 +292,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33FF15202304FF5B002BE310 /* ViewController.swift in Sources */,
+				33E10F6D23060FA800373B2B /* ScheduleTableViewController.swift in Sources */,
+				333B9F3123060E0C004AD7A7 /* EditHomeworkViewController.swift in Sources */,
+				33E10F7123060FDB00373B2B /* HomeworksTableViewController.swift in Sources */,
+				33E10F7D230617EF00373B2B /* TimesViewController.swift in Sources */,
+				33E10F6923060F2900373B2B /* AddEventViewController.swift in Sources */,
+				33FF15202304FF5B002BE310 /* AddHomeworkViewController.swift in Sources */,
 				33FF151E2304FF5B002BE310 /* AppDelegate.swift in Sources */,
+				33E10F752306101700373B2B /* EventsTableViewController.swift in Sources */,
+				33E10F792306108900373B2B /* CompletedHomeworksTableViewController.swift in Sources */,
 				33FF15262304FF5B002BE310 /* HomeworkTracker.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,7 +309,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33E10F6E23060FA800373B2B /* ScheduleTableViewController.swift in Sources */,
+				33E10F7A2306108900373B2B /* CompletedHomeworksTableViewController.swift in Sources */,
+				33E10F7223060FDB00373B2B /* HomeworksTableViewController.swift in Sources */,
+				33E10F7E230617EF00373B2B /* TimesViewController.swift in Sources */,
 				33FF15362304FF5D002BE310 /* HomeworkTrackerTests.swift in Sources */,
+				33E10F762306101700373B2B /* EventsTableViewController.swift in Sources */,
+				33E10F6A23060F2900373B2B /* AddEventViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,7 +323,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33E10F6F23060FA800373B2B /* ScheduleTableViewController.swift in Sources */,
+				33E10F7B2306108900373B2B /* CompletedHomeworksTableViewController.swift in Sources */,
+				33E10F7323060FDB00373B2B /* HomeworksTableViewController.swift in Sources */,
+				33E10F7F230617EF00373B2B /* TimesViewController.swift in Sources */,
 				33FF15412304FF5D002BE310 /* HomeworkTrackerUITests.swift in Sources */,
+				33E10F772306101700373B2B /* EventsTableViewController.swift in Sources */,
+				33E10F6B23060F2900373B2B /* AddEventViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
