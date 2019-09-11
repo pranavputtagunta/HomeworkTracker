@@ -2,14 +2,16 @@
 //  ScheduleTableViewController.swift
 //  HomeworkTracker
 //
-//  Created by user157777 on 8/15/19.
+//  Created by user157777 on 8/26/19.
 //  Copyright © 2019 user157777. All rights reserved.
 //
 
 import UIKit
 import CoreData
-class ScheduleTableViewController: UITableViewController {
 
+class ScheduleTableViewController: UITableViewController {
+    var homeworks = [Homework]()
+    var times = [Times]()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,28 +21,81 @@ class ScheduleTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest = Homework.fetchRequest() as NSFetchRequest<Homework>
+        
+        let sortDescriptor1 = NSSortDescriptor(key: "dueDate", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor1]
+        do {
+            homeworks = try context.fetch(fetchRequest)
+        } catch let error {
+            print(error)
+        }
+        tableView.reloadData()
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return homeworks.count
     }
-
-    /*
+    var placex = 1
+    var timex = Date()
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ScheduleCell", for: indexPath)
+        let homework = homeworks[indexPath.row]
+        var time: Times
+        
+        if placex == 1 {
+            if times.count <= 0 {
+                timex = Date()
+            } else {
+                time = times[times.count - 1]
+                timex = time.startTime ?? Date()
+            }
+        }
+        placex = placex + 1
 
+        var startTimeString: String
+        var endTimeString: String
+        cell.textLabel?.text = homework.homeworkName
+        var daysLeft = Calendar.current.dateComponents([.day], from: timex, to: homework.dueDate!).day! - 1
+        if daysLeft <= 0{
+            daysLeft = 1
+        }
+        let timeToSpendFake = Int(homework.timeLeft)/daysLeft
+        let timeToSpend = Double(timeToSpendFake)
+        let startTimeFake = timex
+        if let startTime = startTimeFake as Date? {
+            startTimeString = startTime.convertString(dateFormat: "HH:mm")
+        } else {
+            startTimeString = ""
+        }
+        let endTimeFake = timex + timeToSpend
+        if let endTime = endTimeFake as Date? {
+            endTimeString = endTime.convertString(dateFormat: "HH:mm")
+        } else {
+            endTimeString = ""
+        }
+        cell.detailTextLabel?.text = startTimeString + " - " + endTimeString
+        timex = endTimeFake
+        
         // Configure the cell...
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

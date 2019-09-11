@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yHg-se-dfo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yWZ-2y-zdn">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -84,7 +84,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-410" y="-710"/>
+            <point key="canvasLocation" x="1039" y="-260"/>
         </scene>
         <!--Change Times-->
         <scene sceneID="PV3-vV-bfL">
@@ -127,90 +127,25 @@
                         <viewLayoutGuide key="safeArea" id="Zze-IM-iXV"/>
                     </view>
                     <navigationItem key="navigationItem" title="Change Times" id="sAY-Vg-uxG">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="vif-mH-Yqf"/>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="2ka-XI-usx"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="vif-mH-Yqf">
+                            <connections>
+                                <action selector="cancelButton:" destination="LZX-NE-bGf" id="Ucq-nB-ua6"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="2ka-XI-usx">
+                            <connections>
+                                <action selector="saveButton:" destination="LZX-NE-bGf" id="fZn-na-FSI"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="bufferTimeDatePicker" destination="04V-mH-Iyz" id="CaC-3J-bse"/>
-                        <outlet property="startTimeDatePicker" destination="QgW-1R-MtF" id="yxD-hj-tFd"/>
+                        <outlet property="breakTimeDatePicker" destination="04V-mH-Iyz" id="LCn-ST-5xk"/>
+                        <outlet property="startTimeDatePicker" destination="QgW-1R-MtF" id="6KA-N1-rOJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6XL-La-VuV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1779.7101449275365" y="-719.19642857142856"/>
-        </scene>
-        <!--Edit Homework-->
-        <scene sceneID="olT-1R-DzC">
-            <objects>
-                <viewController id="tBk-SR-Mf2" customClass="EditHomeworkViewController" customModule="HomeworkTracker" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="PN6-Jw-tYN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Homework" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jO5-75-2wt">
-                                <rect key="frame" x="20" y="118" width="83" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New due date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oVc-gD-D3Z">
-                                <rect key="frame" x="20" y="317" width="107" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2U1-Tt-s3T">
-                                <rect key="frame" x="0.0" y="147" width="414" height="162"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="A9f-xd-fAg">
-                                <rect key="frame" x="0.0" y="346" width="414" height="162"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <date key="date" timeIntervalSinceReferenceDate="587593513.86098397">
-                                    <!--2019-08-15 20:25:13 +0000-->
-                                </date>
-                            </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New completion time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X4y-w9-Cm3">
-                                <rect key="frame" x="20" y="516" width="162" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="mjy-7T-Rzv">
-                                <rect key="frame" x="0.0" y="545" width="414" height="162"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <date key="date" timeIntervalSinceReferenceDate="587593513.86098397">
-                                    <!--2019-08-15 20:25:13 +0000-->
-                                </date>
-                            </datePicker>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Han-A0-2hX"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Edit Homework" id="yEq-Dv-xvZ">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="2g7-YX-S79">
-                            <connections>
-                                <action selector="cancelButton:" destination="tBk-SR-Mf2" id="SoC-pG-fdu"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="YFy-Ue-HUf">
-                            <connections>
-                                <action selector="saveButton:" destination="tBk-SR-Mf2" id="hh4-PF-9VD"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="homeworkPicker" destination="2U1-Tt-s3T" id="512-se-Gzm"/>
-                        <outlet property="newCompletionTimeDatePicker" destination="mjy-7T-Rzv" id="hR0-zn-Fas"/>
-                        <outlet property="newDueDateDatePicker" destination="A9f-xd-fAg" id="9Ik-Yk-C5b"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xas-bP-0Al" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-423" y="53"/>
+            <point key="canvasLocation" x="3229" y="-269"/>
         </scene>
         <!--Completed Homework-->
         <scene sceneID="vMG-R8-PKv">
@@ -245,7 +180,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cqq-bf-l8b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1837.68115942029" y="51.5625"/>
+            <point key="canvasLocation" x="4197.1014492753629" y="501.5625"/>
         </scene>
         <!--Schedule-->
         <scene sceneID="r0L-Mt-dRS">
@@ -301,7 +236,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x6E-1e-8Dr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2430" y="-718"/>
+            <point key="canvasLocation" x="-981" y="-269"/>
         </scene>
         <!--Item-->
         <scene sceneID="QGE-Ha-fQ5">
@@ -320,7 +255,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cqr-Y1-x3J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1333" y="-710"/>
+            <point key="canvasLocation" x="116" y="-260"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="MeN-Dm-le4">
@@ -333,14 +268,14 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="yHg-se-dfo" kind="relationship" relationship="viewControllers" id="EZj-3l-b4e"/>
-                        <segue destination="0jI-To-Jvm" kind="relationship" relationship="viewControllers" id="2ao-R2-zYI"/>
-                        <segue destination="GPG-o0-Nqy" kind="relationship" relationship="viewControllers" id="L14-Am-teg"/>
+                        <segue destination="yHg-se-dfo" kind="relationship" relationship="viewControllers" id="68g-gh-iAn"/>
+                        <segue destination="0jI-To-Jvm" kind="relationship" relationship="viewControllers" id="CNr-PG-GJ7"/>
+                        <segue destination="GPG-o0-Nqy" kind="relationship" relationship="viewControllers" id="aeW-ur-uZX"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qX7-Ig-ug9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5365" y="-1"/>
+            <point key="canvasLocation" x="-3916" y="449"/>
         </scene>
         <!--Schedule-->
         <scene sceneID="lWc-xy-XJ2">
@@ -359,7 +294,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6L5-rR-ciZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3339" y="-718"/>
+            <point key="canvasLocation" x="-1890" y="-269"/>
         </scene>
         <!--Homeworks-->
         <scene sceneID="eI7-zI-DKV">
@@ -370,11 +305,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeworksCell" textLabel="ew9-xY-MNN" detailTextLabel="Zxa-SL-bxi" style="IBUITableViewCellStyleSubtitle" id="YwB-u8-t8s">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="HomeworksCell" textLabel="ew9-xY-MNN" detailTextLabel="Zxa-SL-bxi" style="IBUITableViewCellStyleSubtitle" id="YwB-u8-t8s">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YwB-u8-t8s" id="geW-4v-JMZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ew9-xY-MNN">
@@ -393,6 +328,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="RpX-hP-QQ2" kind="push" identifier="homeworksInfo" id="fcG-dV-sED"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -401,21 +339,154 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Homeworks" id="cOx-Jo-QEK">
-                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="TbC-EJ-L0u">
-                            <connections>
-                                <segue destination="88I-hO-oFz" kind="presentation" id="Bfl-Mc-zHa"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="OTu-de-Phq">
                             <connections>
-                                <segue destination="iJ4-Mk-kF0" kind="presentation" id="K9F-qd-NXa"/>
+                                <segue destination="iJ4-Mk-kF0" kind="presentation" identifier="addHomework" id="K9F-qd-NXa"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nqm-lA-7L2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2394" y="14"/>
+            <point key="canvasLocation" x="-945" y="463"/>
+        </scene>
+        <!--Homework Info-->
+        <scene sceneID="HWa-5r-jMW">
+            <objects>
+                <viewController id="RpX-hP-QQ2" customClass="HomeworkInfoViewController" customModule="HomeworkTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O5B-c0-bPi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="men-82-p17">
+                                <rect key="frame" x="20" y="108" width="374" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Due date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxm-Za-z9b">
+                                <rect key="frame" x="20" y="155" width="74" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lEE-6b-eBN">
+                                <rect key="frame" x="20" y="184" width="374" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time to complete:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oFi-Lc-IKj">
+                                <rect key="frame" x="20" y="241" width="138" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fq3-Nf-gqq">
+                                <rect key="frame" x="20" y="270" width="374" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="V8T-03-HJp"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Homework Info" id="5Ni-7h-QBe">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="M7m-hm-u6z">
+                            <connections>
+                                <segue destination="SoJ-Mc-xrx" kind="push" identifier="editHomework" id="Xju-5F-xJR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="completionTimeLabel" destination="fq3-Nf-gqq" id="YrJ-DG-6fj"/>
+                        <outlet property="dueDateLabel" destination="lEE-6b-eBN" id="CFh-Dd-B5r"/>
+                        <outlet property="homeworkNameLabel" destination="men-82-p17" id="UGR-vB-g1C"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WS7-Fm-DJB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-28.985507246376812" y="457.36607142857139"/>
+        </scene>
+        <!--Edit Homework-->
+        <scene sceneID="d1N-LJ-ERC">
+            <objects>
+                <viewController id="SoJ-Mc-xrx" customClass="EditHomeworkViewController" customModule="HomeworkTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="czz-RJ-i1T">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New homework name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCg-Ko-PrZ">
+                                <rect key="frame" x="20" y="118" width="166" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New due date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iiL-mI-I9S">
+                                <rect key="frame" x="20" y="185" width="107" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HNI-B9-t9c">
+                                <rect key="frame" x="20" y="147" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="5OP-l7-Rar">
+                                <rect key="frame" x="0.0" y="214" width="414" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="588455862.84907806">
+                                    <!--2019-08-25 19:57:42 +0000-->
+                                </date>
+                            </datePicker>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="XbE-JQ-Gge">
+                                <rect key="frame" x="0.0" y="413" width="414" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="588455877.91249895">
+                                    <!--2019-08-25 19:57:57 +0000-->
+                                </date>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New completion time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="id6-LH-jJ9">
+                                <rect key="frame" x="20" y="384" width="162" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="iBy-gb-HJS"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Edit Homework" id="uQr-4p-qDj">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="GPq-75-XYh">
+                            <connections>
+                                <action selector="saveButton:" destination="SoJ-Mc-xrx" id="IKQ-gc-YRc"/>
+                                <segue destination="Hqy-gk-Sbz" kind="unwind" unwindAction="unwindFromSaveWithSender:" id="bX7-c3-CHe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="newCompletionTimeDatePicker" destination="XbE-JQ-Gge" id="ZDH-8s-KUq"/>
+                        <outlet property="newDueDateDatePicker" destination="5OP-l7-Rar" id="Lx7-iU-2o9"/>
+                        <outlet property="newHomeworkNameTextField" destination="HNI-B9-t9c" id="f8P-Tl-j0T"/>
+                        <outlet property="saveButton" destination="GPq-75-XYh" id="d4W-9T-yJL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Ds-lV-zFs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Hqy-gk-Sbz" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1728.985507246377" y="460.71428571428567"/>
         </scene>
         <!--Events-->
         <scene sceneID="ms8-CA-2t0">
@@ -466,7 +537,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NZS-Dr-QYd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2404" y="839"/>
+            <point key="canvasLocation" x="-955" y="1288"/>
         </scene>
         <!--Add Event-->
         <scene sceneID="Byp-1N-7Sn">
@@ -542,7 +613,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J6p-hA-M4W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-410" y="836"/>
+            <point key="canvasLocation" x="1039" y="1286"/>
         </scene>
         <!--Homeworks-->
         <scene sceneID="hnR-1z-aGs">
@@ -561,25 +632,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Spb-y0-6vG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3304" y="14"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="S35-tf-BCS">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="88I-hO-oFz" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BER-CM-RBa">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="tBk-SR-Mf2" kind="relationship" relationship="rootViewController" id="7C3-tD-dRx"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fcT-VN-AxI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1333" y="52"/>
+            <point key="canvasLocation" x="-1855" y="463"/>
         </scene>
         <!--Events-->
         <scene sceneID="YkL-wy-kiD">
@@ -598,7 +651,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3OQ-SW-nsq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3314" y="839"/>
+            <point key="canvasLocation" x="-1865" y="1288"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cYs-4O-TVQ">
@@ -616,7 +669,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RRF-5p-HMT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1320" y="836"/>
+            <point key="canvasLocation" x="129" y="1286"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ydJ-EO-XQP">
@@ -634,7 +687,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="by6-sc-Yxj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="927.536231884058" y="51.5625"/>
+            <point key="canvasLocation" x="3286.9565217391305" y="501.5625"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="58a-A8-e0N">
@@ -652,7 +705,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3zW-mb-45D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="869.56521739130437" y="-719.19642857142856"/>
+            <point key="canvasLocation" x="2319" y="-269"/>
         </scene>
     </scenes>
 </document>

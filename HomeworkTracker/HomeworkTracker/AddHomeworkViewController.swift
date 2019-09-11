@@ -8,8 +8,25 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 class AddHomeworkViewController: UIViewController, UITextFieldDelegate {
+    var tts = 0
+    func convertDays(min: Int) -> Int {
+        return(min/1440)
+    }
+    func convertHours(min: Int) -> Int{
+        return((min%1440)/60)
+    }
+    func convertMinutes(min: Int) -> Int {
+        return((min%1440)%60)
+    }
+    func convertAll(min: Int) -> (Int, Int, Int) {
+        let hours = convertHours(min: min)
+        let minutes = convertMinutes(min: min)
+        let days = convertDays(min: min)
+        return(days, hours, minutes)
+    }
     @IBOutlet var homeworkNameTextField: UITextField!
     @IBOutlet var dueDateDatePicker: UIDatePicker!
     @IBOutlet var completionTimeDatePicker: UIDatePicker!
@@ -30,10 +47,28 @@ class AddHomeworkViewController: UIViewController, UITextFieldDelegate {
         newHomework.homeworkName = homeworkName
         newHomework.dueDate = dueDate
         newHomework.completionTime = completionTime
+        newHomework.timeSpent = 0
+        newHomework.timeLeft = completionTime - newHomework.timeSpent
         newHomework.homeworkId = UUID().uuidString
+        
+
         
         do {
             try context.save()
+            let message = "\(homeworkName) is due today. Make sure to complete it."
+            let content = UNMutableNotificationContent()
+            content.body = message
+            content.sound = UNNotificationSound.default
+            var dateComponents = Calendar.current.dateComponents([.month, .day], from: dueDate)
+            dateComponents.hour = 7
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+            if let identifier = newHomework.homeworkId {
+                
+                let request  = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+                let center = UNUserNotificationCenter.current()
+                center.add(request, withCompletionHandler: nil)
+            }
+            
         } catch let error {
             print("Could not save because of \(error)")
         }

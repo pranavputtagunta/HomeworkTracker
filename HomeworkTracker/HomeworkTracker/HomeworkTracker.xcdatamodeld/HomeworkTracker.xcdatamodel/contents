@@ -17,22 +17,18 @@
         <attribute name="dueDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="homeworkId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="homeworkName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timeLeft" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="timeSpent" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
-    <entity name="Schedule" representedClassName="Schedule" syncable="YES" codeGenerationType="class">
-        <attribute name="homeworkName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="scheduleId" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="timeToSpend" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-    </entity>
-    <entity name="Time" representedClassName="Time" syncable="YES" codeGenerationType="class">
+    <entity name="Times" representedClassName="Times" syncable="YES" codeGenerationType="class">
         <attribute name="bufferTime" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="startTime" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="timesId" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Homework" positionX="-63" positionY="-18" width="128" height="105"/>
-        <element name="Event" positionX="-54" positionY="18" width="128" height="105"/>
         <element name="CompletedHomework" positionX="-36" positionY="45" width="128" height="105"/>
-        <element name="Schedule" positionX="-18" positionY="72" width="128" height="90"/>
-        <element name="Time" positionX="0" positionY="90" width="128" height="90"/>
+        <element name="Event" positionX="-54" positionY="18" width="128" height="105"/>
+        <element name="Homework" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="Times" positionX="0" positionY="90" width="128" height="90"/>
     </elements>
 </model>
