@@ -10,11 +10,13 @@ import UIKit
 import CoreData
 
 class ScheduleTableViewController: UITableViewController {
+    
     var homeworks = [Homework]()
     var times = [Times]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -36,6 +38,15 @@ class ScheduleTableViewController: UITableViewController {
         } catch let error {
             print(error)
         }
+        let appDelegate2 = UIApplication.shared.delegate as! AppDelegate
+        let context2 = appDelegate2.persistentContainer.viewContext
+        let fetchRequest2 = Times.fetchRequest() as NSFetchRequest<Times>
+        
+        do {
+            times = try context2.fetch(fetchRequest2)
+        } catch let error {
+            print(error)
+        }
         tableView.reloadData()
     }
     // MARK: - Table view data source
@@ -49,49 +60,37 @@ class ScheduleTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return homeworks.count
     }
-    var placex = 1
-    var timex = Date()
-    
+
+    var timex: Date = Date()
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ScheduleCell", for: indexPath)
-        let homework = homeworks[indexPath.row]
-        var time: Times
         
-        if placex == 1 {
-            if times.count <= 0 {
-                timex = Date()
-            } else {
-                time = times[times.count - 1]
-                timex = time.startTime ?? Date()
-            }
+        var startTimeString = ""
+        var endTimeString = ""
+        let homework = homeworks[indexPath.row]
+        let time = times[0]
+        if indexPath.row == 0 {
+            timex = time.startTime ?? Date()
         }
-        placex = placex + 1
-
-        var startTimeString: String
-        var endTimeString: String
         cell.textLabel?.text = homework.homeworkName
-        var daysLeft = Calendar.current.dateComponents([.day], from: timex, to: homework.dueDate!).day! - 1
-        if daysLeft <= 0{
-            daysLeft = 1
-        }
-        let timeToSpendFake = Int(homework.timeLeft)/daysLeft
-        let timeToSpend = Double(timeToSpendFake)
-        let startTimeFake = timex
-        if let startTime = startTimeFake as Date? {
+        let daysLeft = Calendar.current.dateComponents([.day], from: Date(), to:homework.dueDate!).day! - 1
+        let ttsInt = Int(homework.completionTime)/daysLeft
+        let ttsDou = Double(ttsInt)
+        let startTimeOG = timex
+        if let startTime = startTimeOG as Date? {
             startTimeString = startTime.convertString(dateFormat: "HH:mm")
         } else {
-            startTimeString = ""
+            cell.detailTextLabel?.text = "You did not enter one or more of the times. Please click 'Change Times' to set your times."
         }
-        let endTimeFake = timex + timeToSpend
-        if let endTime = endTimeFake as Date? {
+        let endTimeOG = startTimeOG + ttsDou
+        if let endTime = endTimeOG as Date? {
             endTimeString = endTime.convertString(dateFormat: "HH:mm")
+            
         } else {
-            endTimeString = ""
+            cell.detailTextLabel?.text = "You did not enter one or more of the times. Please click 'Change Times' to set your times."
         }
         cell.detailTextLabel?.text = startTimeString + " - " + endTimeString
-        timex = endTimeFake
-        
-        // Configure the cell...
+        timex = endTimeOG
 
         return cell
     }

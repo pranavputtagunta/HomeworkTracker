@@ -18,7 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
+        var times = [Times]()
+        //This code prompts  to user to give permission for notifications
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert, .sound], completionHandler: { (granted, error) in
             if granted {
@@ -27,6 +28,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("boo")
             }
         })
+        let appDelegate2 = UIApplication.shared.delegate as! AppDelegate
+        let context2 = appDelegate2.persistentContainer.viewContext
+        let fetchRequest2 = Times.fetchRequest() as NSFetchRequest<Times>
+        
+        do {
+            times = try context2.fetch(fetchRequest2)
+        } catch let error {
+            print(error)
+        }
+        if times.count == 0{
+            let newTimes = Times(context: context2)
+            newTimes.startTime = Date()
+            newTimes.bufferTime = 900
+            newTimes.timesId = UUID().uuidString
+            
+            do {
+                try context2.save()
+            } catch let error {
+                print(error)
+            }
+
+        }
         return true
     }
 
