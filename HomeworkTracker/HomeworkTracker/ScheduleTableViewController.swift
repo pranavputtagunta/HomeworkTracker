@@ -13,7 +13,58 @@ class ScheduleTableViewController: UITableViewController {
     
     var homeworks = [Homework]()
     var times = [Times]()
-
+    func isTimeInRange(comparedTime: Date, startTime: Date, endTime: Date, homeworkStart: Date, homeworkEnd: Date) -> Bool?{
+        if comparedTime > startTime && comparedTime < endTime {
+            if homeworkStart < startTime && homeworkEnd > endTime {
+                return false
+            } else {
+                return true
+            }
+        } else {
+            return false
+        }
+        
+    }
+    func isTimeRangeInTimeRange(startTimeInside: Date, endTimeInside: Date, startTimeOutside: Date, endTimeOutside: Date) -> Bool{
+        if startTimeInside > startTimeOutside && endTimeInside < endTimeOutside {
+            return true
+        } else {
+            return false
+        }
+    }
+    func newHomeworkTimes(homeworkStart: Date, homeworkEnd: Date, homeworkDuration: Double) -> [Date?]{
+        let events = [Event]()
+        var newEventStartTime: Date? = nil
+        var newEventEndTime: Date? = nil
+        
+        var newEventStartTime1: Date? = nil
+        var newEventStartTime2: Date? = nil
+        var newEventEndTime1: Date? = nil
+        var newEventEndTime2: Date? = nil
+        let numOfEvents = events.count
+        for x in 0...(numOfEvents-1){
+            let event = events[x]
+            let startTimeInterfere = isTimeInRange(comparedTime: homeworkStart, startTime: event.eventTime!, endTime: (event.eventTime!+event.eventDuration), homeworkStart: homeworkStart, homeworkEnd: homeworkEnd)
+            let eventInside = isTimeRangeInTimeRange(startTimeInside: event.eventTime!, endTimeInside: (event.eventTime!+event.eventDuration), startTimeOutside: homeworkStart, endTimeOutside: homeworkEnd)
+            let endTimeInterfere = isTimeInRange(comparedTime: homeworkEnd, startTime: event.eventTime!, endTime: (event.eventTime!+event.eventDuration), homeworkStart: homeworkStart, homeworkEnd: homeworkEnd)
+            let homeworkInside = isTimeRangeInTimeRange(startTimeInside: homeworkStart, endTimeInside: homeworkEnd, startTimeOutside: event.eventTime!, endTimeOutside: (event.eventTime!+event.eventDuration))
+            if startTimeInterfere == true || homeworkInside == true{
+                newEventStartTime = (event.eventTime! + event.eventDuration)
+                newEventEndTime = (newEventStartTime! + homeworkDuration)
+            }
+            if endTimeInterfere  == true || eventInside == true {
+                newEventStartTime1 = homeworkStart
+                newEventEndTime1 = event.eventTime!
+                let timeSpent = Calendar.current.dateComponents([.second], from: homeworkStart, to: newEventEndTime1!).second
+                newEventStartTime2 = (event.eventTime! + event.eventDuration)
+                let timeSpentDouble = Double(timeSpent!)
+                let timeLeft = (homeworkDuration - timeSpentDouble)
+                newEventEndTime2 = (newEventStartTime2! + timeLeft)
+                
+            }
+        }
+        return [newEventStartTime, newEventEndTime, newEventStartTime1, newEventEndTime1, newEventStartTime2, newEventEndTime2]
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -60,7 +111,7 @@ class ScheduleTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return homeworks.count
     }
-
+    //[newEventStartTime, newEventEndTime, newEventStartTime1, newEventEndTime1, newEventStartTime2, newEventEndTime2]
     var timex: Date = Date()
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ScheduleCell", for: indexPath)
@@ -89,8 +140,24 @@ class ScheduleTableViewController: UITableViewController {
         } else {
             cell.detailTextLabel?.text = "You did not enter one or more of the times. Please click 'Change Times' to set your times."
         }
-        cell.detailTextLabel?.text = startTimeString + " - " + endTimeString
-        timex = endTimeOG
+        let homeworkTimes = newHomeworkTimes(homeworkStart: startTimeOG, homeworkEnd: endTimeOG, homeworkDuration: ttsDou)
+        if homeworkTimes[1] != nil{
+            cell.detailTextLabel?.text = homeworkTimes[0]!.convertString(dateFormat: "HH:mm") + " - " + homeworkTimes[1]!.convertString(dateFormat: "HH:mm")
+            timex = homeworkTimes[1]!
+        } else {
+            if homeworkTimes[5] != nil {
+                let num1 = homeworkTimes[2]!.convertString(dateFormat: "HH:mm")
+                let num2 = homeworkTimes[3]!.convertString(dateFormat: "HH:mm")
+                let num3 = homeworkTimes[4]!.convertString(dateFormat: "HH:mm")
+                let num4 = homeworkTimes[5]!.convertString(dateFormat: "HH:mm")
+                cell.detailTextLabel?.text = num1 + " - " + num2 + ", " + num3 + " - " + num4
+                timex = homeworkTimes[5]!
+            } else {
+                cell.detailTextLabel?.text = startTimeString + " - " + endTimeString
+                timex = endTimeOG
+            }
+        }
+
 
         return cell
     }
